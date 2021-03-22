@@ -31,6 +31,14 @@ class CreateEmployeesTable extends Migration
             $table->date('date_hired');
             $table->integer('department_id')->unsigned();
             $table->integer('division_id')->unsigned();
+            $table->string('email');
+            $table->string('salary');
+            $table->string('mobile');
+            $table->string('status');
+            $table->string('shift');
+            $table->string('paymentType');
+            $table->string('bloodGroup');
+            $table->string('gender');
             // $table->integer('company_id')->unsigned();
             $table->foreign('department_id')->references('id')->on('department');
             $table->foreign('division_id')->references('id')->on('division');
