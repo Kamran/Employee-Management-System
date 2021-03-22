@@ -11,5 +11,6 @@ class Employee extends Model
     *
     * @var array
     */
+    protected $table = 'employees';
     protected $guarded = [];
 }
