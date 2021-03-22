@@ -80,7 +80,7 @@ class EmployeeManagementController extends Controller
         // Upload image
         $path = $request->file('picture')->store('avatars');
         $keys = ['lastname', 'firstname', 'middlename', 'address', 'city_id', 'state_id', 'country_id', 'zip',
-        'birthdate', 'date_join', 'department_id', 'division_id'];
+        'birthdate', 'date_join','email','salary', 'mobile','status','shift','paymentType','bloodGroup','gender','department_id', 'division_id'];
         $input = $this->createQueryInput($keys, $request);
         $input['picture'] = $path;
         // Not implement yet
@@ -138,7 +138,7 @@ class EmployeeManagementController extends Controller
         $this->validateInput($request);
         // Upload image
         $keys = ['lastname', 'firstname', 'middlename', 'address', 'city_id', 'state_id', 'country_id', 'zip',
-         'birthdate', 'date_join', 'department_id',  'division_id'];
+         'birthdate', 'date_join','email','salary','status','shift','paymentType','bloodGroup','gender','mobile', 'department_id',  'division_id'];
         $input = $this->createQueryInput($keys, $request);
         if ($request->file('picture')) {
             $path = $request->file('picture')->store('avatars');
@@ -221,6 +221,9 @@ class EmployeeManagementController extends Controller
             'country_id' => 'required',
             'zip' => 'required|max:10',
             // 'age' => 'required',
+            'email'=>'required',
+            'mobile'=>'required',
+            'salary'=>'required',
             'birthdate' => 'required',
             'date_join' => 'required',
             'department_id' => 'required',
